@@ -49,7 +49,7 @@
 
         #userInfo {
             height: 40px;
-            width: 200px;
+            width: 185px;
             position: relative;
             top: 5px;
             left: 15px;
@@ -63,12 +63,31 @@
             left: 5px;
         }
         #navigator {
-            width: 100px;
             height: 40px;
             position: relative;
             top: 5px;
             left: 20px;
             background: darkorchid;
+        }
+        #navigator ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: #333;
+        }
+        #navigator li {
+            float: left;
+        }
+        #navigator li a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+        #navigator li a:hover {
+            background: black;
         }
     </style>
 </head>
@@ -76,13 +95,15 @@
 
 <div id="header" >
     HEADER
-    HEADER<br>
-    HEADER<br>
     <div id="userInfo" class="column-h">
         <img id="avatar" alt="AVATAR" src="src/pic/avatar/avatar.jpeg" />
+        USERINFO
     </div>
     <div id="navigator" class="column-h">
+        <ul>
+            <li><a class="active" href="homepage.html">主页</a></li>
         NAVIGATOR
+        </ul>
     </div>
 </div>
 
