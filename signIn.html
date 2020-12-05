@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DQJ-SignIn</title>
+    <title>DQJ: Sign in</title>
     <style>
         body {
             min-width: 400px;
+            background: url("src/pic/background/sign-up.png");
         }
         #header {
+            top: 5px;
             width: 100%;
+            height: 40px;
             display: flex;
         }
         #container {
@@ -43,13 +46,58 @@
             top: 15px;
             border-radius: 40px;
         }
+        #searchLine {
+            margin: 5px 10px;
+            width: 200px;
+            padding: 8px 20px;
+            font-size: 15px;
+            line-height: 15px;
+            vertical-align: middle;
+            background-color: #e8f0fe;
+            background-repeat: no-repeat;
+            background-position: right 8px center;
+            border: 1px solid #e1e4e8;
+            border-radius: 6px;
+            outline: none;
+        }
+        #searchLine:focus {
+            box-shadow: 0 0 3px #03a9f4;
+        }
         #title1 {
             font-size: 28px;
-            font-weight: 400;
+            font-weight: 800;
             text-align: left;
             letter-spacing: 1px;
             margin: 0 10px;
             color: #00a5ff;
+        }
+        #navigator2 ul {
+            list-style-type: none;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            padding: 0;
+            overflow: hidden;
+            background: #def5ff;
+            border-radius: 5px;
+        }
+        #navigator2 li {
+            float: left;
+        }
+        #navigator2 li a {
+            display: inline-block;
+            color: black;
+            text-align: center;
+            padding: 5px 20px;
+            text-decoration: none;
+            font-size: 15px;
+            border-radius: 5px;
+        }
+        #navigator2 li a:hover {
+            background: #a8e2fc;
+        }
+        #signIn {
+            border: 1px solid #959595;
+            background: #cce6ff;
         }
         #title2 {
             font-size: 30px;
@@ -86,7 +134,6 @@
             vertical-align: middle;
             background-color: #e8f0fe;
             background-repeat: no-repeat;
-            background-position: right 8px center;
             border: 1px solid #e1e4e8;
             border-radius: 6px;
             outline: none;
@@ -125,8 +172,7 @@
             margin-left: auto;
             margin-right: auto;
             margin-top: 20px;
-            /*padding-top: 10px;*/
-            border: 1px solid #e1e4e8;
+            border: 1px solid #dadde2;
             border-radius: 5px;
             text-align: center;
             font-weight: 400;
@@ -159,51 +205,79 @@
 
     </style>
 </head>
+
 <body>
-
-<div id="header">
-    <h1 id="title1">DQJ</h1>
-</div>
-
-<div id="container">
-    <div id="top">
-        <img id="icon" src="src/pic/avatar/avatar.jpeg" />
-        <div style="display: flex; padding-left: 50px">
-            <h1 id="title2">Sign in to</h1><h1 id="title3">DQJ</h1>
+    <div id="header">
+        <h1 id="title1">
+            DQJ
+        </h1>
+        <input id="searchLine" placeholder="Search DQJ"/>
+        <div id="navigator2">
+            <ul>
+                <li><a id="signUp" href="signUp.html">
+                    Sign up
+                </a></li>
+                <li><a id="signIn" href="signIn.html">
+                    Sign in
+                </a></li>
+            </ul>
         </div>
     </div>
-    <div id="center">
-        <div id="formBody">
-            <label for="login_field">
-                Username
-            </label>
-            <br>
-            <input class="inputLine" type="text" name="login" id="login_field" tabindex="1" autocapitalize="off" autocomplete="username" autofocus="autofocus" />
-            <br>
-            <label for="password">
-                Password
-            </label>
-            <br>
-            <input class="inputLine" type="password" name="password" id="password" tabindex="2" autocomplete="current-password" />
-            <br>
-            <input id="button" type="submit" name="commit" value="Sign in" tabindex="3" class="btn btn-primary btn-block" data-disable-with="Signing in…" />
+
+    <div id="container">
+        <div id="top">
+            <img id="icon" src="src/pic/avatar/avatar.jpeg"  alt="ICON"/>
+            <div style="display: flex; padding-left: 50px">
+                <h1 id="title2">
+                    Sign in to
+                </h1>
+                <h1 id="title3">
+                    DQJ
+                </h1>
+            </div>
+        </div>
+        <div id="center">
+            <div id="formBody">
+                <label for="login_field">
+                    Username
+                </label>
+                <br>
+                <input class="inputLine" type="text" name="login" id="login_field" tabindex="1" autofocus="autofocus" />
+                <br>
+                <label for="password">
+                    Password
+                </label>
+                <br>
+                <input class="inputLine" type="password" name="password" id="password" tabindex="2" />
+                <br>
+                <a href="homepage.html" style="text-decoration: none;">
+                    <input id="button" type="submit" value="Sign in" tabindex="3" />
+                </a>
+            </div>
+        </div>
+        <div id="bottom">
+            <p>
+                New to DQJ?<a href="signUp.html" style="color: #0366d6;text-decoration: none;padding-left: 5px">Create an account</a>.
+            </p>
         </div>
     </div>
-    <div id="bottom">
-        <p>
-            New to <text style="color: #00a5ff">DQJ</text>?<a href="signUp.html" style="color: #0366d6;text-decoration: none;padding-left: 5px">Create an account</a>.
-        </p>
+
+    <div id="footer">
+        <ul>
+            <li><a href="">
+                Terms
+            </a></li>
+            <li><a href="">
+                Privacy
+            </a></li>
+            <li><a href="">
+                Security
+            </a></li>
+            <li><a href="">
+                Contact<span style="color: #00a5ff"> DQJ</span>
+            </a></li>
+        </ul>
     </div>
-</div>
-
-<div id="footer">
-    <ul class="list-style-none d-flex flex-justify-center">
-        <li class="mr-3"><a href="">Terms</a></li>
-        <li class="mr-3"><a href="">Privacy</a></li>
-        <li class="mr-3"><a href="">Security</a></li>
-        <li><a class="link-gray" href="">Contact <text style="color: #00a5ff">DQJ</text></a></li>
-    </ul>
-</div>
-
 </body>
+
 </html>
