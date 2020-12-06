@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DQJ: homePage</title>
+    <title>DQJ: videos</title>
     <link rel="shortcut icon" href="src/pic/favicon/favicon.png">
     <style>
         body {
@@ -92,7 +92,7 @@
         #navigator2 li a:hover {
             background: #a8e2fc;
         }
-        #homePage {
+        #videos {
             border: 1px solid #959595;
             background: #cce6ff;
         }
@@ -105,15 +105,16 @@
         .box {
             display: flex;
             flex-flow:column wrap;
-            height: 420px;
+            height: 920px;
         }
-        .imgBox {
+        .videoBox {
             width: 290px;
+            height: 163px;
             border-radius: 5px;
             margin: 10px 5px;
             box-shadow: 3px 3px 4px black;
         }
-        .imgBox:hover {
+        .videoBox:hover {
             position: relative;
             top: -5px;
             left: -5px;
@@ -151,33 +152,55 @@
 <div id="container">
     <div id="center">
         <div id="section1" class="section">
-            <a href="illustrations.html" style="text-decoration: none;color: black;">
-                <p style="margin-left: 20px;margin-top: 10px;font-size: 32px;font-weight: 500;font-family: Segoe UI,sans-serif;width: 350px;margin-bottom: 10px;">illustrations</p>
-            </a>
+            <p style="margin-left: 20px;margin-top: 10px;font-size: 32px;font-weight: 500;font-family: Segoe UI,sans-serif;width: 350px;margin-bottom: 10px;">videos</p>
             <div id="box1" class="box">
-                <img class="imgBox" src="src/pic/scenery/001.png" alt="CONNECTION ERROR">
-                <img class="imgBox" src="src/pic/scenery/002.jpg" alt="CONNECTION ERROR">
-                <img class="imgBox" src="src/pic/scenery/005.png" alt="CONNECTION ERROR">
-                <img class="imgBox" src="src/pic/scenery/006.jpg" alt="CONNECTION ERROR">
-                <img class="imgBox" src="src/pic/scenery/009.png" alt="CONNECTION ERROR">
-                <img class="imgBox" src="src/pic/scenery/010.jpg" alt="CONNECTION ERROR">
+                <video class="videoBox" width="300" height="240" controls="controls" poster="src/video/001.jpg">
+                    <source src="src/video/001.mp4" type="video/mp4" />
+                </video>
+                <video class="videoBox" width="300" height="240" controls="controls" poster="src/video/002.jpg">
+                    <source src="src/video/002.mp4" type="video/mp4" />
+                </video>
+                <video class="videoBox" width="300" height="240" controls="controls" poster="src/video/003.jpg">
+                    <source src="src/video/003.mp4" type="video/mp4" />
+                </video>
+                <video class="videoBox" width="300" height="240" controls="controls" poster="src/video/004.jpg">
+                    <source src="src/video/004.mp4" type="video/mp4" />
+                </video>
+                <video class="videoBox" width="300" height="240" controls="controls" poster="src/video/005.jpg">
+                    <source src="src/video/005.mp4" type="video/mp4" />
+                </video>
+                <video class="videoBox" width="300" height="240" controls="controls" poster="src/video/006.jpg">
+                    <source src="src/video/006.mp4" type="video/mp4" />
+                </video>
+                <video class="videoBox" width="300" height="240" controls="controls" poster="src/video/001.jpg">
+                    <source src="src/video/001.mp4" type="video/mp4" />
+                </video>
+                <video class="videoBox" width="300" height="240" controls="controls" poster="src/video/002.jpg">
+                    <source src="src/video/002.mp4" type="video/mp4" />
+                </video>
+                <video class="videoBox" width="300" height="240" controls="controls" poster="src/video/003.jpg">
+                    <source src="src/video/003.mp4" type="video/mp4" />
+                </video>
+                <video class="videoBox" width="300" height="240" controls="controls" poster="src/video/004.jpg">
+                    <source src="src/video/004.mp4" type="video/mp4" />
+                </video>
+                <video class="videoBox" width="300" height="240" controls="controls" poster="src/video/005.jpg">
+                    <source src="src/video/005.mp4" type="video/mp4" />
+                </video>
+                <video class="videoBox" width="300" height="240" controls="controls" poster="src/video/006.jpg">
+                    <source src="src/video/006.mp4" type="video/mp4" />
+                </video>
+                <video class="videoBox" width="300" height="240" controls="controls" poster="src/video/004.jpg">
+                    <source src="src/video/004.mp4" type="video/mp4" />
+                </video>
+                <video class="videoBox" width="300" height="240" controls="controls" poster="src/video/005.jpg">
+                    <source src="src/video/005.mp4" type="video/mp4" />
+                </video>
+                <video class="videoBox" width="300" height="240" controls="controls" poster="src/video/006.jpg">
+                    <source src="src/video/006.mp4" type="video/mp4" />
+                </video>
             </div>
-            <a href="illustrations.html" style="text-decoration: none;color: black;">
-                <p style="text-align: center;font-weight: bold;font-size: large;margin: 10px 0;">······</p>
-            </a>
-        </div>
-        <div id="section2" class="section">
-            <a href="videos.html" style="text-decoration: none;color: black;">
-                <p style="margin-left: 20px;margin-top: 10px;font-size: 32px;font-weight: 500;font-family: Segoe UI,sans-serif;width: 350px;margin-bottom: 10px;">videos</p>
-            </a>
-            <div id="box2" class="box" style="height: 200px">
-                <img class="imgBox" src="src/video/001.jpg" alt="CONNECTION ERROR">
-                <img class="imgBox" src="src/video/002.jpg" alt="CONNECTION ERROR">
-                <img class="imgBox" src="src/video/003.jpg" alt="CONNECTION ERROR">
-            </div>
-            <a href="videos.html" style="text-decoration: none;color: black;">
-                <p style="text-align: center;font-weight: bold;font-size: large;margin: 10px 0;">······</p>
-            </a>
+            <p style="text-align: center;font-weight: bold;font-size: large;margin: 10px 0;">······</p>
         </div>
     </div>
     <div id="left"></div>
@@ -187,6 +210,9 @@
 <div id="footer">
     <p style="text-align: center;margin-top: 40px;margin-bottom: 30px"> copy right  @<span style="color: #00a5ff">DQJ</span></p>
 </div>
+
+</body>
+</html>
 
 </body>
 </html>
