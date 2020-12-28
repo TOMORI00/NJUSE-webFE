@@ -113,11 +113,6 @@
             margin: 10px 5px;
             box-shadow: 3px 3px 4px black;
         }
-        /*.imgBox:hover {*/
-        /*    position: relative;*/
-        /*    top: -5px;*/
-        /*    left: -5px;*/
-        /*}*/
     </style>
     <script>
         function watermark() {
@@ -176,23 +171,20 @@
                     mask_div.style.height = settings.watermark_height + 'px';
                     mask_div.style.display = "block";
                     oTemp.appendChild(mask_div);
-                };
-            };
+                }
+            }
             maskElement.appendChild(oTemp);
         }
 
         function obviousWatermark2() {
-            var img = new Image();
+            let img = new Image();
             img.src = "src/pic/scenery/001.png";
             img.onload=function(){
-                //准备canvas
-                var canvas = document.getElementById("canvas1");
+                let canvas = document.getElementById("canvas1");
                 canvas.width = 800;
                 canvas.height = 450;
-                var context = canvas.getContext("2d");
-                // 绘制图片
+                let context = canvas.getContext("2d");
                 context.drawImage(img, 0, 0, 800, 450);
-                // 绘制水印
                 context.font="20px microsoft yahei";
                 context.fillStyle = "rgba(0,0,0,0.3)";
                 context.fillText("copy right @DQJ",600,400);
@@ -204,45 +196,39 @@
         }
 
         function hiddenWatermark() {
-            var canvas = document.getElementById('canvas2')
+            let canvas = document.getElementById('canvas2')
             canvas.width = 1920;
             canvas.height = 1080;
-            var ctx = canvas.getContext('2d');
-            var img = new Image();
+            let ctx = canvas.getContext('2d');
+            let img = new Image();
 
             img.src = "src/pic/background/watermark.png";
-            var maskData;
+            let maskData;
             ctx.drawImage(img, 0, 0, 1920, 1080);
             maskData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
             ctx.clearRect(0, 0, 1920, 1080);
 
+
+            img = new Image();
             img.src = "src/pic/scenery/001.png";
-            var originData;
-            ctx.drawImage(img, 0, 0, 1920, 1080);
-            originData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
-            ctx.clearRect(0, 0, 1920, 1080);
+            let originData;
+            img.onload=function() {
+                ctx.drawImage(img, 0, 0, 1920, 1080);
+                originData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
+                ctx.clearRect(0, 0, 1920, 1080);
 
-            console.log(originData);
-
-            for (var i = 0; i < originData.data.length; i++) {
-                if (i % 4 === 0) {
-                    if (maskData.data[i] === 0) {
-                        originData.data[i+3] -= 1;
+                for (let i = 0; i < originData.data.length; i++) {
+                    if (i % 4 === 0) {
+                        if (maskData.data[i] !== 0) {
+                            if (originData.data[i] % 2 === 0) {
+                                originData.data[i]++;
+                            }
+                        }
                     }
                 }
-                else if (i % 4 === 1) {
-                    // if (maskData.data[i] !== 0) {
-                    //     originData.data[i+2] = 0;
-                    // }
-                }
-                else if (i % 4 === 2) {
-                    // if (maskData.data[i] !== 0) {
-                    //     originData.data[i+1] = 0;
-                    // }
-                }
+                ctx.putImageData(originData, 0, 0);
             }
 
-            ctx.putImageData(originData, 0, 0);
         }
     </script>
 </head>
@@ -280,7 +266,7 @@
 <div id="container">
     <div id="center">
         <div id="section1" class="section">
-            <p style="margin-left: 20px;margin-top: 10px;font-size: 32px;font-weight: 500;font-family: Segoe UI,sans-serif;width: 350px;margin-bottom: 10px;">origin</p>
+            <p style="margin-left: 20px;margin-top: 10px;font-size: 32px;font-weight: 500;font-family: Segoe UI,sans-serif;width: 350px;margin-bottom: 10px;">origin picture</p>
             <div id="box1" class="box">
                 <img id="pic1" class="imgBox" src="src/pic/scenery/001.png" alt="CONNECTION ERROR">
             </div>
@@ -288,17 +274,21 @@
             <div id="box2" class="box">
                 <img id="pic2" class="imgBox" src="src/pic/scenery/001.png" alt="CONNECTION ERROR">
             </div>
-            <p style="margin-left: 20px;margin-top: 10px;font-size: 32px;font-weight: 500;font-family: Segoe UI,sans-serif;width: 350px;margin-bottom: 10px;">obvious watermark2 : canvas</p>
+            <p style="margin-left: 20px;margin-top: 10px;font-size: 32px;font-weight: 500;font-family: Segoe UI,sans-serif;width: 350px;margin-bottom: 10px;">obvious watermark2 : canvas action</p>
             <div id="box3" class="box">
                 <canvas id="canvas1" class="imgBox"></canvas>
             </div>
             <p style="margin-left: 20px;margin-top: 10px;font-size: 32px;font-weight: 500;font-family: Segoe UI,sans-serif;width: 350px;margin-bottom: 10px;">watermark : <br>copy right @DQJ</p>
             <div id="box4" class="box">
-                <img id="pic4" class="imgBox"  style="border: 1px solid black;" src="src/pic/background/watermark.png" alt="CONNECTION ERROR">
+                <img id="pic4" class="imgBox" src="src/pic/background/watermark.png" alt="CONNECTION ERROR">
             </div>
             <p style="margin-left: 20px;margin-top: 10px;font-size: 32px;font-weight: 500;font-family: Segoe UI,sans-serif;width: 350px;margin-bottom: 10px;">hidden watermark</p>
             <div id="box5" class="box">
                 <canvas id="canvas2" class="imgBox"></canvas>
+            </div>
+            <p style="margin-left: 20px;margin-top: 10px;font-size: 32px;font-weight: 500;font-family: Segoe UI,sans-serif;width: 350px;margin-bottom: 10px;">hidden watermark</p>
+            <div id="box6" class="box">
+                <img id="pic5" class="imgBox" src="src/pic/out.png" alt="CONNECTION ERROR">
             </div>
             <p style="text-align: center;font-weight: bold;font-size: large;margin: 10px 0;">······</p>
         </div>
