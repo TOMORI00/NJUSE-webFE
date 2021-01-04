@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DQJ: Sign in</title>
+    <style>
+        body {
+            min-width: 600px;
+            background: url("public/pic/background/sign-up_min.png");
+        }
+        #header {
+            top: 5px;
+            width: 100%;
+            height: 40px;
+            display: flex;
+        }
+        #container {
+            height:500px;
+            margin-top: 60px;
+        }
+        #top {
+            width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #center {
+            width: 300px;
+            height: 205px;
+            margin-left: auto;
+            margin-right: auto;
+            background: #f6f8fa;
+            border-radius: 10px;
+            border:1px solid #cccccc;
+            box-shadow: 0 0 1px #e1e4e8;
+        }
+        #footer {
+            clear: both;
+        }
+
+
+        #icon {
+            width: 80px;
+            height: 80px;
+            position: relative;
+            left: 100px;
+            top: 15px;
+            border-radius: 40px;
+        }
+        #searchLine {
+            margin: 5px 10px;
+            width: 200px;
+            padding: 8px 20px;
+            font-size: 15px;
+            line-height: 15px;
+            vertical-align: middle;
+            background-color: #e8f0fe;
+            background-repeat: no-repeat;
+            background-position: right 8px center;
+            border: 1px solid #e1e4e8;
+            border-radius: 6px;
+            outline: none;
+        }
+        #searchLine:focus {
+            box-shadow: 0 0 3px #03a9f4;
+        }
+        #title1 {
+            font-size: 28px;
+            font-weight: 800;
+            text-align: left;
+            letter-spacing: 1px;
+            margin: 0 10px;
+            color: #00a5ff;
+        }
+        #navigator2 ul {
+            list-style-type: none;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            padding: 0;
+            overflow: hidden;
+            background: #def5ff;
+            border-radius: 5px;
+        }
+        #navigator2 li {
+            float: left;
+        }
+        #navigator2 li a {
+            display: inline-block;
+            color: black;
+            text-align: center;
+            padding: 5px 20px;
+            text-decoration: none;
+            font-size: 15px;
+            border-radius: 5px;
+        }
+        #navigator2 li a:hover {
+            background: #a8e2fc;
+        }
+        #signIn {
+            border: 1px solid #959595;
+            background: #cce6ff;
+        }
+        #title2 {
+            font-size: 30px;
+            font-weight: 300;
+            text-align: center;
+            letter-spacing: -1px;
+            color: black;
+            padding-top: 5px;
+        }
+        #title3 {
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            letter-spacing: 1px;
+            color: #00a5ff;
+            padding-top: 5px;
+            padding-left: 15px;
+        }
+        #formBody {
+            margin-top: 10px;
+        }
+        #formBody label {
+            font-weight: 500;
+            margin-left: 25px;
+        }
+        .inputLine {
+            margin-left: 25px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            width: 210px;
+            padding: 5px 20px;
+            font-size: 14px;
+            line-height: 15px;
+            vertical-align: middle;
+            background-color: #e8f0fe;
+            background-repeat: no-repeat;
+            border: 1px solid #e1e4e8;
+            border-radius: 6px;
+            outline: none;
+        }
+        .inputLine:focus {
+            box-shadow: 0 0 5px #03a9f4;
+        }
+        #button2 {
+            margin-top: 10px;
+            margin-left: 25px;
+            display: block;
+            width: 250px;
+            padding: 5px 20px;
+            text-align: center;
+            background: #2ea44f;
+            color: white;
+            font-weight: bold;
+            border-color: #e1e4e8;
+            border-radius: 5px;
+            outline: none;
+            box-shadow: 0 0 2px #2ea44f;
+        }
+        #button2:hover {
+            background: #22863a;
+        }
+        #button2:active {
+            box-shadow: none;
+            position: relative;
+            top: 1px;
+            left: 1px;
+        }
+        #bottom {
+            background: white;
+            width: 300px;
+            height: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+            border: 1px solid #dadde2;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: 400;
+            font-size: 14px;
+        }
+        #footer {
+            width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #footer ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        #footer li {
+            float: left;
+        }
+        #footer li a {
+            display: inline-block;
+            color: black;
+            text-align: center;
+            font-size: 13px;
+            padding: 10px 10px;
+            text-decoration: none;
+        }
+        #footer li a:hover {
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <a href="signIn" style="text-decoration: none">
+            <h1 id="title1">
+                DQJ
+            </h1>
+        </a>
+        <input id="searchLine" placeholder="Search DQJ"/>
+        <div id="navigator2">
+            <ul>
+                <li><a id="signUp" href="signUp">
+                    Sign up
+                </a></li>
+                <li><a id="signIn" href="signIn">
+                    Sign in
+                </a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="container">
+        <div id="top">
+            <img id="icon" src="public/pic/avatar/avatar.webp"  alt="ICON"/>
+            <div style="display: flex; padding-left: 50px">
+                <h1 id="title2">
+                    Sign in to
+                </h1>
+                <h1 id="title3">
+                    DQJ
+                </h1>
+            </div>
+        </div>
+        <div id="center">
+            <div id="formBody">
+                <label for="login_field">
+                    Username
+                </label>
+                <br>
+                <input class="inputLine" type="text" name="username" id="login_field" tabindex="1" autofocus="autofocus" />
+                <br>
+                <label for="password">
+                    Password
+                </label>
+                <br>
+                <input class="inputLine" type="password" name="password" id="password" tabindex="2" />
+                <br>
+                <a style="text-decoration: none;">
+                    <input id="button2" type="submit" value="Sign in" tabindex="3" />
+                </a>
+            </div>
+        </div>
+        <div id="bottom">
+            <p>
+                New to DQJ?<a href="signUp" style="color: #0366d6;text-decoration: none;padding-left: 5px">Create an account</a>.
+            </p>
+        </div>
+    </div>
+
+    <div id="footer">
+        <ul>
+            <li><a href="">
+                Terms
+            </a></li>
+            <li><a href="">
+                Privacy
+            </a></li>
+            <li><a href="">
+                Security
+            </a></li>
+            <li><a href="">
+                Contact<span style="color: #00a5ff"> DQJ</span>
+            </a></li>
+        </ul>
+    </div>
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/crypto-js/3.1.9-1/crypto-js.min.js"></script>
+    <script src="../js/signIn.js"></script>
+
+</body>
+
+</html>
